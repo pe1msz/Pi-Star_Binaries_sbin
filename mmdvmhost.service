@@ -9,6 +9,7 @@
 #                     Version 1.1                       #
 #                                                       #
 #########################################################
+# added gpio 10 to INput command, PE1MSZ
 
 # Service Config
 DAEMON=MMDVMHost
@@ -26,6 +27,8 @@ ipVar=`hostname -I | cut -d' ' -f1`
 # Pre-flight checks...
 test -x ${DAEMON_PATH}${DAEMON} || exit 1
 test -r $CONFIG || exit 1
+
+gpio mode 10 in
 
 # if dstarrepeater is configured or running, dont start this daemon!
 ! test -r /etc/dstar-radio.dstarrepeater || exit 1
