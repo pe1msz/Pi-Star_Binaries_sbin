@@ -47,6 +47,8 @@ if [ ! -d $LOGDIR ]; then
   chmod 775 $LOGDIR
 fi
 
+gpio mode 10 in
+
 case "$1" in
 	start)
 		if [ `${PGREP} ${DAEMON}` ]; then
