@@ -139,6 +139,7 @@ main_function() {
 	pistar-firewall > /dev/null 2>&1
 	echo "Done"
 
+	
 	# Pre-Fix some config in MMDVMHost for update purposes.
 	mmdvmHostVer=`MMDVMHost -v | awk '{print $3}' | cut -c 1-8`
 	needsUpdate=`grep -c Gwy /etc/mmdvmhost`
@@ -166,6 +167,17 @@ main_function() {
 	if [ ! -f /usr/local/etc/NXDNHostsLocal.txt ]; then
 		touch /usr/local/etc/NXDNHostsLocal.txt
 	fi
+	 echo "Updating PiStar-GPIO-lines..."
+	# adding gpio input command in rc.local if not already present
+	if  grep -q '# set the gpio to in on pin 10' /etc/rc.local
+	then
+ 	 echo "already up to date!"
+	else
+	sudo sed -i 30i\ '      # set the gpio to in on pin 10' /etc/rc.local
+	sudo sed -i 31i\ '      gpio mode 10 in' /etc/rc.local
+	 echo "done"
+	fi
+
 
 	# myDV Cast Updates
 	#if [[ "$(grep "Special" /etc/pistar-release | awk '{print $3}')" = "myDV_Cast" ]]; then
