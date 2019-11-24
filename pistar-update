@@ -177,6 +177,18 @@ main_function() {
 	sudo sed -i 31i\ '      gpio mode 10 in' /etc/rc.local
 	 echo "done"
 	fi
+	
+	 echo "Updating Wifi-power settings..."
+        # adding gpio input command in rc.local if not already present
+        if  grep -q 'wireless-power off' /etc/network/interfaces
+        then
+         echo "already up to date!"
+        else
+        sudo sed -i 27i\ '      # Fix for powersave' /etc/network/interfaces
+        sudo sed -i 28i\ '      wireless-power off' /etc/network/interfaces
+         echo "done"
+        fi
+
 
 
 	# myDV Cast Updates
