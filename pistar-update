@@ -184,8 +184,8 @@ main_function() {
 
         if  grep -q '# castserial' /etc/rc.local
         then
-         sudo sed -i '32d' /etc/rc.local
          sudo sed -i '33d' /etc/rc.local
+         sudo sed -i '32d' /etc/rc.local
         fi
 
         if  grep -q '# castserialnew' /etc/rc.local
