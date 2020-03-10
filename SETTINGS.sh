@@ -1,8 +1,8 @@
 #bin
 #bash
 
-# usage: SETTINGS.sh [CALL] [ID] [TEXT] [MODULE]
-# example: SETTINGS.sh PE1MSZ 2045123 RUUD E
+# usage: SETTINGS.sh [CALL] [ID] [TEXT] [MODULE] [ESSID]
+# example: SETTINGS.sh PE1MSZ 2045123 RUUD E 09
 
 
 # Make the root filesystem writable
@@ -52,7 +52,7 @@
 	sudo sed -i "3s/Id=.*/Id=$2/1" /etc/mmdvmhost
 	sudo sed -i "8s/Display=.*/Display=$3/1" /etc/mmdvmhost
 	sudo sed -i "98s/Id=.*/Id=$2/1" /etc/mmdvmhost
-	sudo sed -i '98s/$/09/' /etc/mmdvmhost
+	sudo sed -i "98s/$/$5/" /etc/mmdvmhost
 	sudo sed -i "77s/Module=.*/Module=$4/1" /etc/mmdvmhost
 	sudo sed -i "14s/repeaterBand1=.*/repeaterBand1=$4/1" /etc/ircddbgateway
 	sudo sed -i "108s/starNetBand1=.*/starNetBand1=$4/1" /etc/ircddbgateway
