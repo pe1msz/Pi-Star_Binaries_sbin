@@ -1,0 +1,5 @@
+iptables -I INPUT -p udp --dport 2460 -j ACCEPT 
+iptables -A INPUT -p udp -m udp --dport 40094 -j ACCEPT 
+iptables -A OUTPUT -p udp -m udp --dport 40094 -j ACCEPT 
+iptables -A INPUT -p udp -m udp --dport 40095 -j ACCEPT
+iptables -A OUTPUT -p udp -m udp --dport 40095 -j ACCEPT 
