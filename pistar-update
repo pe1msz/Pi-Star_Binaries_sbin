@@ -220,8 +220,8 @@ main_function() {
         fi
 
 
-  sudo cp R -u -p /usr/local/sbin/castudp.service /etc/systemd/system/.  
-  sudo cp R -u -p /usr/local/sbin/castserial.service /etc/systemd/system/. fi
+  sudo cp  -u -p /usr/local/sbin/castudp.service /etc/systemd/system/.  
+  sudo cp  -u -p /usr/local/sbin/castserial.service /etc/systemd/system/. 
 
   sudo	cp /usr/local/sbin/ipv4.fw  /root/.
 
