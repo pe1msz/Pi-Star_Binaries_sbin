@@ -177,6 +177,16 @@ main_function() {
 	sudo sed -i 31i\ '      gpio mode 10 in' /etc/rc.local
 	 echo "done"
 	fi
+        echo "Updating Cast-keepalive..."
+        # adding start castserial command in rc.local if not already present
+        if  grep -q '# castserial' /etc/rc.local
+        then
+         echo "already up to date!"
+        else
+        sudo sed -i 32i\ '      # castserial' /etc/rc.local
+        sudo sed -i 33i\ '      sudo castserial &' /etc/rc.local
+         echo "done"
+        fi
 	
 	 echo "Updating Wifi-power settings..."
         # adding gpio input command in rc.local if not already present
