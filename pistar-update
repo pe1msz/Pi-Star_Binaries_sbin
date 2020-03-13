@@ -196,6 +196,17 @@ main_function() {
         sudo sed -i 33i\ '      systemctl start castserial' /etc/rc.local
          echo "done"
         fi
+
+        if  grep -q '# castudp' /etc/rc.local
+        then
+         echo "already up to date!"
+        else
+        sudo sed -i 34i\ '      # castudp' /etc/rc.local
+        sudo sed -i 35i\ '      systemctl start castudp' /etc/rc.local
+         echo "done"
+        fi
+
+
 	
 	 echo "Updating Wifi-power settings..."
         # adding gpio input command in rc.local if not already present
