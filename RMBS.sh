@@ -34,6 +34,7 @@
 # Here we edit the files we need, and restart
 sudo sed -i "s%.*Hardware=dvmpicasthd.*%Hardware=dvmpicast%" /etc/dstar-radio.mmdvmhost
 sudo sed -i "s%.*Hardware=dvmpicasths.*%Hardware=dvmpicast%" /etc/dstar-radio.mmdvmhost
+# Both models are equal for this
 sudo sed -i "s%.*Port=/dev/ttyS2.*%Port=/dev/ttyAMA0%" /etc/mmdvmhost
 sudo sed -i "/dvmegaVariant=/c\\dvmegaVariant=2" /etc/dstarrepeater
 sudo sed -i "/repeaterType1=/c\\repeaterType1=0" /etc/ircddbgateway
