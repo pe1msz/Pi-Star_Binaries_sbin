@@ -7,6 +7,7 @@
        sudo systemctl stop cron.service > /dev/null 2>/dev/null &                   #Cron
 
         # Stop the DV Services
+	sudo systemctl stop castserial.service > /dev/null 2>/dev/null &
         sudo systemctl stop dstarrepeater.service > /dev/null 2>/dev/null &          # D-Star Radio Service
         sudo systemctl stop mmdvmhost.service > /dev/null 2>/dev/null &              # MMDVMHost Radio Service
         sudo systemctl stop castserial.service > /dev/null 2>/dev/null &
@@ -28,7 +29,8 @@
 	sudo systemctl stop dmr2nxdn.service > /dev/null 2>/dev/null &
 	sudo systemctl stop dmrgateway.service > /dev/null 2>/dev/null &
 	sudo systemctl stop dapnetgateway.service > /dev/null 2>/dev/null &
-	sudo systemctl stop castserial.service > /dev/null 2>/dev/null &
+
+
 #  sudo sed -i "/dvmegaPort=/c\\dvmegaPort=/dev/ttyS2" /etc/dstarrepeater
 
 # Here we edit the files we need, and restart
@@ -38,14 +40,15 @@ sudo sed -i "s%.*Hardware=dvmpicasths.*%Hardware=dvmpicast%" /etc/dstar-radio.mm
 sudo sed -i "s%.*Port=/dev/ttyS2.*%Port=/dev/ttyAMA0%" /etc/mmdvmhost
 sudo sed -i "/dvmegaVariant=/c\\dvmegaVariant=2" /etc/dstarrepeater
 sudo sed -i "/repeaterType1=/c\\repeaterType1=0" /etc/ircddbgateway
+sudo cast-reset
 
 
        sudo systemctl start cron.service > /dev/null 2>/dev/null &                   #Cron
 
+
         # start the DV Services
         sudo systemctl start dstarrepeater.service > /dev/null 2>/dev/null &          # D-Star Radio$
-        sudo systemctl start mmdvmhost.service > /dev/null 2>/dev/null &              # MMDVMHost Ra$
-        sudo systemctl start castserial.service > /dev/null 2>/dev/null &
+        //sudo systemctl start mmdvmhost.service > /dev/null 2>/dev/null &              # MMDVMHost Ra$
         sudo systemctl start ircddbgateway.service > /dev/null 2>/dev/null &
         sudo systemctl start timeserver.service > /dev/null 2>/dev/null &
         sudo systemctl start pistar-watchdog.service > /dev/null 2>/dev/null &
@@ -64,6 +67,7 @@ sudo sed -i "/repeaterType1=/c\\repeaterType1=0" /etc/ircddbgateway
         sudo systemctl start dmr2nxdn.service > /dev/null 2>/dev/null &
         sudo systemctl start dmrgateway.service > /dev/null 2>/dev/null &
         sudo systemctl start dapnetgateway.service > /dev/null 2>/dev/null &
-        sudo systemctl start castserial.service > /dev/null 2>/dev/null &
+sleep 10
+	sudo systemctl start mmdvmhost.service > /dev/null 2>/dev/null &              # MMDVMHost Ra$
 
 
