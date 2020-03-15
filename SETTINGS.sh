@@ -51,6 +51,7 @@
 	sudo sed -i "2s/gateway=.*/gateway=$1 G/1" /etc/dstarrepeater
 	sudo sed -i "3s/Id=.*/Id=$2/1" /etc/mmdvmhost
 	sudo sed -i "8s/Display=.*/Display=$3/1" /etc/mmdvmhost
+	sudo sed -i "98s/Id=.*/Id=$209/1" /etc/mmdvmhost
 	sudo sed -i "77s/Module=.*/Module=$4/1" /etc/mmdvmhost
 	sudo sed -i "14s/repeaterBand1=.*/repeaterBand1=$4/1" /etc/ircddbgateway
 	sudo sed -i "108s/starNetBand1=.*/starNetBand1=$4/1" /etc/ircddbgateway
