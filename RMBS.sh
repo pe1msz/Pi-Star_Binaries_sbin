@@ -48,7 +48,7 @@ sudo cast-reset
 
         # start the DV Services
         sudo systemctl start dstarrepeater.service > /dev/null 2>/dev/null &          # D-Star Radio$
-        //sudo systemctl start mmdvmhost.service > /dev/null 2>/dev/null &              # MMDVMHost Ra$
+        sudo systemctl start mmdvmhost.service > /dev/null 2>/dev/null &              # MMDVMHost Ra$
         sudo systemctl start ircddbgateway.service > /dev/null 2>/dev/null &
         sudo systemctl start timeserver.service > /dev/null 2>/dev/null &
         sudo systemctl start pistar-watchdog.service > /dev/null 2>/dev/null &
@@ -67,7 +67,7 @@ sudo cast-reset
         sudo systemctl start dmr2nxdn.service > /dev/null 2>/dev/null &
         sudo systemctl start dmrgateway.service > /dev/null 2>/dev/null &
         sudo systemctl start dapnetgateway.service > /dev/null 2>/dev/null &
-sleep 10
-	sudo systemctl start mmdvmhost.service > /dev/null 2>/dev/null &              # MMDVMHost Ra$
+
+	//sudo systemctl start mmdvmhost.service > /dev/null 2>/dev/null &              # MMDVMHost Ra$
 
 
