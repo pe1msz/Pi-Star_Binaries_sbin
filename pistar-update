@@ -220,6 +220,15 @@ main_function() {
         fi
 
 
+if [ ! -f /etc/systemd/system/castudp.service ] then  cp /usr/local/sbin/castudp.service /etc/systemd/system/.
+if [ ! -f /etc/systemd/system/castserial.service ] then  cp /usr/local/sbin/castserial.service /etc/systemd/system/.
+cp /usr/local/sbin/ipv4.fw  /root/.
+
+
+
+
+
+
 
 	# myDV Cast Updates
 	#if [[ "$(grep "Special" /etc/pistar-release | awk '{print $3}')" = "myDV_Cast" ]]; then
