@@ -218,7 +218,8 @@ main_function() {
         sudo sed -i 28i\ '      wireless-power off' /etc/network/interfaces
          echo "done"
         fi
-
+# enable transparent data
+sudo sed -i "66s/Enable=0/Enable=1/1" /etc/mmdvmhost
 
   sudo cp  -u -p /usr/local/sbin/castudp.service /etc/systemd/system/.  
   sudo cp  -u -p /usr/local/sbin/castserial.service /etc/systemd/system/. 
