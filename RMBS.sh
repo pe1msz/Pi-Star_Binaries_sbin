@@ -7,7 +7,6 @@
        sudo systemctl stop cron.service > /dev/null 2>/dev/null &                   #Cron
 
         # Stop the DV Services
-	sudo systemctl stop castserial.service > /dev/null 2>/dev/null &
         sudo systemctl stop dstarrepeater.service > /dev/null 2>/dev/null &          # D-Star Radio Service
         sudo systemctl stop mmdvmhost.service > /dev/null 2>/dev/null &              # MMDVMHost Radio Service
         sudo systemctl stop castserial.service > /dev/null 2>/dev/null &
@@ -29,7 +28,7 @@
 	sudo systemctl stop dmr2nxdn.service > /dev/null 2>/dev/null &
 	sudo systemctl stop dmrgateway.service > /dev/null 2>/dev/null &
 	sudo systemctl stop dapnetgateway.service > /dev/null 2>/dev/null &
-
+	sudo systemctl stop castserial.service > /dev/null 2>/dev/null &
 
 #  sudo sed -i "/dvmegaPort=/c\\dvmegaPort=/dev/ttyS2" /etc/dstarrepeater
 
@@ -37,7 +36,7 @@
 sudo sed -i "s%.*Hardware=dvmpicasthd.*%Hardware=dvmpicast%" /etc/dstar-radio.mmdvmhost
 sudo sed -i "s%.*Hardware=dvmpicasths.*%Hardware=dvmpicast%" /etc/dstar-radio.mmdvmhost
 # Both models are equal for this
-sudo sed -i "s%.*Port=/dev/ttyS2.*%Port=/dev/ttyAMA0%" /etc/mmdvmhost
+sudo sed -i "s%Port=/dev/ttyS2%Port=/dev/ttyAMA0%1" /etc/mmdvmhost
 sudo sed -i "/dvmegaVariant=/c\\dvmegaVariant=2" /etc/dstarrepeater
 sudo sed -i "/repeaterType1=/c\\repeaterType1=0" /etc/ircddbgateway
 sudo cast-reset
@@ -67,7 +66,6 @@ sudo cast-reset
         sudo systemctl start dmr2nxdn.service > /dev/null 2>/dev/null &
         sudo systemctl start dmrgateway.service > /dev/null 2>/dev/null &
         sudo systemctl start dapnetgateway.service > /dev/null 2>/dev/null &
-
-	//sudo systemctl start mmdvmhost.service > /dev/null 2>/dev/null &              # MMDVMHost Ra$
+        sudo systemctl start castserial.service > /dev/null 2>/dev/null &
 
 
