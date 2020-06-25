@@ -220,9 +220,10 @@ main_function() {
         fi
 
 
-if [ ! -f /etc/systemd/system/castudp.service ] then  cp /usr/local/sbin/castudp.service /etc/systemd/system/.
-if [ ! -f /etc/systemd/system/castserial.service ] then  cp /usr/local/sbin/castserial.service /etc/systemd/system/.
-cp /usr/local/sbin/ipv4.fw  /root/.
+  sudo cp  -u -p /usr/local/sbin/castudp.service /etc/systemd/system/.  
+  sudo cp  -u -p /usr/local/sbin/castserial.service /etc/systemd/system/. 
+
+  sudo	cp /usr/local/sbin/ipv4.fw  /root/.
 
 
 
