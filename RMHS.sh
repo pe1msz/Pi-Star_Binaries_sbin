@@ -37,6 +37,7 @@ sudo sed -i "s%Port=/dev/ttyAMA0%Port=/dev/ttyS2%1" /etc/mmdvmhost
 sudo sed -i "/dvmegaVariant=/c\\dvmegaVariant=3" /etc/dstarrepeater
 sudo sed -i "/repeaterType1=/c\\repeaterType1=0" /etc/ircddbgateway
 
+sleep 2
 
        sudo systemctl start cron.service > /dev/null 2>/dev/null &                   #Cron
 
