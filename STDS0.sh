@@ -32,6 +32,7 @@
 
 
 sudo sed -i "76s/Enable=1/Enable=0/1" /etc/mmdvmhost
+sudo sed -i "124s/Enable=1/Enable=0/1" /etc/mmdvmhost
 sudo cast-reset
 
 

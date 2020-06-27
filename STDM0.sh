@@ -32,6 +32,7 @@
 
 
 sudo sed -i "87s/Enable=1/Enable=0/1" /etc/mmdvmhost
+sudo sed -i "132s/Enable=1/Enable=0/1" /etc/mmdvmhost
 sudo cast-reset
 
        sudo systemctl start cron.service > /dev/null 2>/dev/null &                   #Cron
